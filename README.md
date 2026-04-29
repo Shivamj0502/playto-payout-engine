@@ -195,15 +195,17 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 ## 📸 Proof of Working
 
 ### 1. Create Payout (POST)
+
 - Endpoint: `/api/v1/payouts`
 - Shows idempotency + transaction + ledger debit
 
-![Create Payout](https://raw.githubusercontent.com/Shivamj0502/playto-payout-engine/main/assets/post1.png)
+<img src="https://raw.githubusercontent.com/Shivamj0502/playto-payout-engine/main/assets/post1.png" width="700"/>
 
 ---
 
 ### 2. Fetch Payouts & Balance (GET)
+
 - Endpoint: `/api/v1/payouts`
 - Shows stored payouts and computed balance from ledger
 
-![Get Payouts](https://raw.githubusercontent.com/Shivamj0502/playto-payout-engine/main/assets/get.png)
+<img src="https://raw.githubusercontent.com/Shivamj0502/playto-payout-engine/main/assets/get.png" width="700"/>
