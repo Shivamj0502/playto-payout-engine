@@ -3,14 +3,14 @@
 I am storing all money movements as entries in a ledger table instead of storing balance directly.
 Credits represent money coming in and debits represent payouts.
 To calculate balance, I use this query:
-
-// SELECT 
+```
+SELECT 
   COALESCE(SUM(CASE WHEN type = 'CREDIT' THEN amount ELSE 0 END), 0) -
   COALESCE(SUM(CASE WHEN type = 'DEBIT' THEN amount ELSE 0 END), 0) 
 AS balance
 FROM ledger
 WHERE merchant_id = ?
-//
+```
 
 I chose this design because:
 it avoids inconsistency issues of storing balance separately
@@ -22,12 +22,13 @@ balance is always derived from source of truth
 
 To prevent two payouts from using the same balance, I use a database row-level lock:
 
-// await tx
+```
+await tx
   .select()
   .from(merchants)
   .where(eq(merchants.id, merchantId))
   .for("update");
-//
+```
 
 This ensures that when one transaction is running for a merchant, another transaction has to wait.
 So if two payout requests come at the same time:
@@ -42,9 +43,9 @@ This prevents double spending.
 3. The Idempotency
 
 I store idempotency keys in a table with a unique constraint on:
-//
+```
 (merchant_id, key)
-//
+```
 Flow:
 
 when request comes, I first check if key already exists
@@ -112,12 +113,12 @@ This is a classic check-then-act race condition
 What I changed
 
 I wrapped everything inside a database transaction + row lock:
-//
+```
 .select()
 .from(merchants)
 .where(...)
 .for("update")
-//
+```
 Now flow becomes:
 
 lock merchant
