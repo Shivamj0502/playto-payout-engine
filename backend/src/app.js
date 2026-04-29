@@ -10,7 +10,7 @@ app.use(express.json());
 
 // health check
 app.get("/", (req, res) => {
-    res.send("Backend is running 🚀");
+    res.send("Backend is running!!");
 });
 
 // main routes
