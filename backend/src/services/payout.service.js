@@ -130,7 +130,7 @@ export async function createPayout({ merchantId, amount, idempotencyKey }) {
       // ========================
       console.log("STEP 8: adding to queue");
 
-      await payoutQueue.add("process-payout", { payoutId });
+      //await payoutQueue.add("process-payout", { payoutId });
 
       console.log("✅ TRANSACTION SUCCESS");
 
