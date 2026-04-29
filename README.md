@@ -172,6 +172,8 @@ Send same request twice with same key
 
 Same response
 No duplicate payout
+
+
 🧩 Worker Behavior
 Picks pending payouts
 70% → success
@@ -209,3 +211,7 @@ open this above link to see the image somehow this image doesnt show up here
 
 ![image alt](https://github.com/Shivamj0502/playto-payout-engine/blob/20d0e1322123d71523405bf39b5c9bec89dde194/get.png)
 open this above link to see the image somehow this image doesnt show up here
+
+
+### 3. Frontend Look
+![image alt](https://github.com/Shivamj0502/playto-payout-engine/blob/76bde76987a3f226e4341cd09a89256141dccd38/Playto_UI.png)
