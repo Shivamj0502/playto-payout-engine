@@ -21,9 +21,10 @@ The goal was not to build “just APIs”, but to build something that does not 
 4. Docker (Postgres + Redis)
 
 
-📂 Project Structure
+## 📂 Project Structure
+
+```text
 backend/
-│
 ├── src/
 │   ├── config/         # DB setup
 │   ├── models/         # Tables (ledger, payouts, merchants, idempotency)
@@ -36,6 +37,7 @@ backend/
 │   ├── middlewares/    # Error handling
 │   ├── app.js
 │   └── server.js
+└── package.json
 
 
 ⚙️ Setup Instructions
@@ -196,7 +198,7 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows idempotency + transaction + ledger debit
 
-![Create Payout](./assets/post.png)
+![Create Payout](./assets/post1.png)
 
 ---
 
