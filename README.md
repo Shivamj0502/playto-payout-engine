@@ -198,7 +198,7 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows idempotency + transaction + ledger debit
 
-![post1](https://github.com/user-attachments/assets/f4b334b0-3652-4752-9642-e147171d7986)
+![post1](assets/post1.png)
 
 ---
 
@@ -207,4 +207,4 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows stored payouts and computed balance from ledger
 
-![get](https://github.com/user-attachments/assets/e4fec934-8f9f-4db7-84d4-20a233b00021)
+![get](assets/get.png)
