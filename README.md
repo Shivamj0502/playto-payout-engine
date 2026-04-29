@@ -199,7 +199,7 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Shows idempotency + transaction + ledger debit
 
 ![image alt](https://github.com/Shivamj0502/playto-payout-engine/blob/0287d96297347f9ae5a71e824daea00b7a00e172/post1.png)
-
+open this above link to see the image somehow this image doesnt show up here
 ---
 
 ### 2. Fetch Payouts & Balance (GET)
@@ -207,4 +207,5 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows stored payouts and computed balance from ledger
 
-![get](assets/get.png)
+![image alt](https://github.com/Shivamj0502/playto-payout-engine/blob/20d0e1322123d71523405bf39b5c9bec89dde194/get.png)
+open this above link to see the image somehow this image doesnt show up here
