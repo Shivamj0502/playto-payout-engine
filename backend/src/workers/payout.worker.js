@@ -8,11 +8,7 @@ import { eq, sql } from "drizzle-orm";
 
 dotenv.config();
 
-const connection = new IORedis({
-  host: "127.0.0.1",
-  port: 7002,
-  maxRetriesPerRequest: null,
-});
+const connection = new IORedis(process.env.REDIS_URL);
 
 const worker = new Worker(
   "payout-queue",
