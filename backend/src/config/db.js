@@ -11,7 +11,6 @@ const pool = new Pool({
 
 export const db = drizzle(pool);
 
-// ✅ अब db बन गया, अब use करो
 (async () => {
   try {
     const res = await db.execute(

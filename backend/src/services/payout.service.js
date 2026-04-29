@@ -16,7 +16,7 @@ import { payoutQueue } from "../jobs/queue.js";
 export async function createPayout({ merchantId, amount, idempotencyKey }) {
   return await withTransaction(async (tx) => {
     try {
-      console.log("🟢 START TRANSACTION");
+      console.log("START TRANSACTION");
 
       // ========================
       // STEP 1: IDEMPOTENCY CHECK
@@ -25,7 +25,7 @@ export async function createPayout({ merchantId, amount, idempotencyKey }) {
       const existing = await getIdempotency(tx, merchantId, idempotencyKey);
 
       if (existing) {
-        console.log("⚠️ Idempotency hit");
+        console.log("Idempotency hit");
 
         if (existing.response) {
           return JSON.parse(existing.response);
@@ -41,7 +41,7 @@ export async function createPayout({ merchantId, amount, idempotencyKey }) {
       try {
         await createIdempotency(tx, merchantId, idempotencyKey);
       } catch (err) {
-        console.log("⚠️ Race condition on idempotency");
+        console.log("Race condition on idempotency");
 
         const retry = await getIdempotency(tx, merchantId, idempotencyKey);
         if (retry?.response) {
@@ -63,7 +63,7 @@ export async function createPayout({ merchantId, amount, idempotencyKey }) {
         .for("update");
 
       if (merchant.length === 0) {
-        throw new Error("Merchant not found ❌");
+        throw new Error("Merchant not found");
       }
 
       // ========================
@@ -81,10 +81,10 @@ export async function createPayout({ merchantId, amount, idempotencyKey }) {
       `);
 
       const balance = BigInt(balanceResult.rows[0].balance);
-      console.log("💰 Balance:", balance.toString());
+      console.log("Balance:", balance.toString());
 
       if (balance < BigInt(amount)) {
-        throw new Error("Insufficient balance ❌");
+        throw new Error("Insufficient balance");
       }
 
       // ========================
@@ -130,14 +130,14 @@ export async function createPayout({ merchantId, amount, idempotencyKey }) {
       // ========================
       console.log("STEP 8: adding to queue");
 
-      //await payoutQueue.add("process-payout", { payoutId });
+      
 
-      console.log("✅ TRANSACTION SUCCESS");
+      console.log("TRANSACTION SUCCESS");
 
       return response;
     } catch (err) {
-      console.error("💥 TRANSACTION FAILED:", err.message);
-      throw err; // IMPORTANT: don't swallow error
+      console.error("TRANSACTION FAILED:", err.message);
+      throw err; 
     }
   });
 }

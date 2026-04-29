@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 // main routes
 app.use("/api/v1", routes);
 
-// error handler (always last)
+// error handler
 app.use(errorMiddleware);
 
 export default app;

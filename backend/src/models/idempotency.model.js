@@ -7,7 +7,6 @@ export const idempotency = pgTable(
 
     merchantId: uuid("merchant_id").notNull(),
 
-    // 🔥 FIX: key → idempotency_key
     idempotencyKey: text("idempotency_key").notNull(),
 
     response: text("response"),
