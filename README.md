@@ -198,7 +198,7 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows idempotency + transaction + ledger debit
 
-![Create Payout](assets/post1.png)
+![Create Payout](https://raw.githubusercontent.com/Shivamj0502/playto-payout-engine/main/assets/post1.png)
 
 ---
 
@@ -206,4 +206,4 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows stored payouts and computed balance from ledger
 
-![Get Payouts](assets/get.png)
+![Get Payouts](https://raw.githubusercontent.com/Shivamj0502/playto-payout-engine/main/assets/get.png)
