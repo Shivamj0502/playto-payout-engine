@@ -191,7 +191,6 @@ Database is the source of truth
 
 Note: Due to Redis free-tier instability on deployment, queue processing is temporarily bypassed to ensure reliable payout creation. Core concurrency, idempotency, and ledger logic remain intact.
 
-
 ## 📸 Proof of Working
 
 ### 1. Create Payout (POST)
@@ -199,7 +198,7 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows idempotency + transaction + ledger debit
 
-
+![post1](https://github.com/user-attachments/assets/f4b334b0-3652-4752-9642-e147171d7986)
 
 ---
 
@@ -208,5 +207,4 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows stored payouts and computed balance from ledger
 
-<img width="1253" height="750" alt="get" src="https://github.com/user-attachments/assets/e4fec934-8f9f-4d63-bf95-e7f7ce7b7775" />
-<img width="1264" height="715" alt="post1" src="https://github.com/user-attachments/assets/f4b334b0-3652-4ec5-b327-95e6e59b569a" />
+![get](https://github.com/user-attachments/assets/e4fec934-8f9f-4db7-84d4-20a233b00021)
