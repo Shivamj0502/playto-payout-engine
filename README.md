@@ -186,3 +186,22 @@ All amounts stored as integers
 No floats used anywhere
 All money operations inside transactions
 Database is the source of truth
+
+Note: Due to Redis free-tier instability on deployment, queue processing is temporarily bypassed to ensure reliable payout creation. Core concurrency, idempotency, and ledger logic remain intact.
+
+
+## 📸 Proof of Working
+
+### 1. Create Payout (POST)
+- Endpoint: `/api/v1/payouts`
+- Shows idempotency + transaction + ledger debit
+
+![Create Payout](./assets/post.png)
+
+---
+
+### 2. Fetch Payouts & Balance (GET)
+- Endpoint: `/api/v1/payouts`
+- Shows stored payouts and computed balance from ledger
+
+![Get Payouts](./assets/get.png)

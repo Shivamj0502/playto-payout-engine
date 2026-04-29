@@ -147,3 +147,6 @@ unique constraint at DB level
 catch constraint violation
 
 This guarantees correctness under race.
+
+IMPORTANT - Initially, queue enqueueing inside transaction caused failures due to Redis connection resets.
+I fixed it by decoupling queue dependency so payout creation remains reliable even if Redis is down.
