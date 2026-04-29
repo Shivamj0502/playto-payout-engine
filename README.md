@@ -19,6 +19,7 @@ The goal was not to build “just APIs”, but to build something that does not 
 2. PostgreSQL (Drizzle ORM)
 3. Redis + BullMQ (queue + worker)
 4. Docker (Postgres + Redis)
+5. Frontend (React + Tailwind)
 
 
 ## 📂 Project Structure
