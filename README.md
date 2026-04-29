@@ -198,7 +198,7 @@ Note: Due to Redis free-tier instability on deployment, queue processing is temp
 - Endpoint: `/api/v1/payouts`
 - Shows idempotency + transaction + ledger debit
 
-![post1](assets/post1.png)
+![image alt](https://github.com/Shivamj0502/playto-payout-engine/blob/0287d96297347f9ae5a71e824daea00b7a00e172/post1.png)
 
 ---
 
